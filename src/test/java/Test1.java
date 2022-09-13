@@ -1,8 +1,6 @@
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
-
 import org.testng.annotations.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +14,7 @@ public class Test1 {
                 .when()
                 .get("/users?page=2")
                 .then()
-                .statusCode(200) //Cod respon
+                .statusCode(200) //Cod response
                 .extract()
                 .body()
                 .asString();
@@ -32,7 +30,7 @@ public class Test1 {
                 .when()
                 .get("/users?page=2")
                 .then()
-                .statusCode(200) //Cod respon
+                .statusCode(200) //Cod response
                 .body("data[1].first_name", equalTo("Lindsay"));
     }
 
@@ -51,7 +49,7 @@ public class Test1 {
                 .post("/users")
                 .then()
                 .log().all() // Log para la respuesta
-                .statusCode(201); //Cod respose
+                .statusCode(201); //Cod response
     }
 
     @Test
@@ -64,10 +62,24 @@ public class Test1 {
 
         given() // Given para enviar un body
                 .log().all() // Log para la petición
+                .body(map.toString())
                 .when()
                 .put("/users/2")
                 .then()
                 .log().all()
-                .statusCode(200); //Cod respose
+                .statusCode(200); //Cod response
+    }
+
+    @Test
+    public void deleteUser() { //Revisar luego
+        baseURI = "https://reqres.in/api";
+
+        given() // Given para enviar un body
+                .log().all() // Log para la petición
+                .when()
+                .delete("/users/2")
+                .then()
+                .log().all()
+                .statusCode(204); //Cod response
     }
 }
