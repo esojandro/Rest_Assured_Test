@@ -10,12 +10,10 @@ public class Test2 {
                 .given()
                 .log().all()
                 .contentType(ContentType.JSON)
-                .body(
-                        "{\n" +
-                                " \"email\": \"elchobylobi@mail.com\",\n" +
-                                " \"password\": \"comegalletaslomito\"\n" +
-                                "}"
-                )
+                .body("{\n" +
+                        "       \"email\": \"elchobylobi@mail.com\",\n" +
+                        "       \"password\": \"lomitotoby\"\n" +
+                        "}")
                 .post("https://reqres.in/api/login")
                 .then()
                 .statusCode(200)
