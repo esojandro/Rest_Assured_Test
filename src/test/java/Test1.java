@@ -48,14 +48,14 @@ public class Test1 {
                 .log().all() // Log para la petición
                 .body(map.toString())
                 .when()
-                .post("/users?page=2")
+                .post("/users")
                 .then()
                 .log().all() // Log para la respuesta
                 .statusCode(201); //Cod respose
     }
 
-    /*@Test
-    public void updateUser() { Revisar luego
+    @Test
+    public void updateUser() { //Revisar luego
         baseURI = "https://reqres.in/api";
 
         Map<String, Object> map = new HashMap<String, Object>();
@@ -65,8 +65,9 @@ public class Test1 {
         given() // Given para enviar un body
                 .log().all() // Log para la petición
                 .when()
-                .put("/users?page=2")
+                .put("/users/2")
                 .then()
+                .log().all()
                 .statusCode(200); //Cod respose
-    }*/
+    }
 }
