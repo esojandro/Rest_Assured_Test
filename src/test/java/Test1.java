@@ -23,7 +23,7 @@ public class Test1 {
     }
 
     @Test
-    public void getUser() {
+    public void getEspecificUser() {
         baseURI = "https://reqres.in/api";
 
         given() // Given para enviar un body
@@ -32,6 +32,17 @@ public class Test1 {
                 .then()
                 .statusCode(200) //Cod response
                 .body("data[1].first_name", equalTo("Lindsay"));
+    }
+
+    @Test
+    public void getUser() {
+        baseURI = "https://reqres.in/api";
+
+        given() // Given para enviar un body
+                .when()
+                .get("/users/2")
+                .then()
+                .statusCode(200); //Cod response
     }
 
     @Test
