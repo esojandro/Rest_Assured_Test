@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Test1 {
+public class Test1 { // Page: https://reqres.in/
 
     @Test
     public void getUsers() {
@@ -35,7 +35,7 @@ public class Test1 {
     }
 
     @Test
-    public void getUser() {
+    public void getSingleUser() {
         baseURI = "https://reqres.in/api";
 
         given() // Given para enviar un body
