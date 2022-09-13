@@ -53,4 +53,20 @@ public class Test1 {
                 .log().all() // Log para la respuesta
                 .statusCode(201); //Cod respose
     }
+
+    /*@Test
+    public void updateUser() { Revisar luego
+        baseURI = "https://reqres.in/api";
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("name", "Toby");
+        map.put("job", "perro guardian de galletas");
+
+        given() // Given para enviar un body
+                .log().all() // Log para la petición
+                .when()
+                .put("/users?page=2")
+                .then()
+                .statusCode(200); //Cod respose
+    }*/
 }
