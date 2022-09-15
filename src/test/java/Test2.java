@@ -11,8 +11,8 @@ public class Test2 {
                 .log().all()
                 .contentType(ContentType.JSON)
                 .body("{\n" +
-                        "       \"email\": \"elchobylobi@mail.com\",\n" +
-                        "       \"password\": \"lomitotoby\"\n" +
+                        "\"email\": \"eve.holt@reqres.in\",\n" +
+                        "\"password\": \"cityslicka\"\n" +
                         "}")
                 .post("https://reqres.in/api/login")
                 .then()
