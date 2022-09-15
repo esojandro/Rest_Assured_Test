@@ -1,13 +1,17 @@
-import io.restassured.RestAssured;
+import io.restassured.RestAssured.*;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
+import java.util.HashMap;
+import java.util.Map;
+
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
 
 public class Test2 {
     @Test
-    public void loginTest(){ //WIP
+    public void loginTest(){
 
-        String requestBody = RestAssured
-                .given()
+        String requestBody = given()
                 .log().all()
                 .contentType(ContentType.JSON)
                 .body("{\n" +
